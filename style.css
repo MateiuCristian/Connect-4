@@ -1,0 +1,19 @@
+table {
+    border: 10px solid black;
+    margin: auto;
+    margin-top: 100px;
+}
+
+table td {
+    border: 1px solid lightgray;
+    background-color: lightgray;
+    padding: 1em;
+    width: 75px;
+    height: 75px;
+}
+
+button {
+    width: 75px;
+    height: 75px;
+    background-color: white !important;
+}
