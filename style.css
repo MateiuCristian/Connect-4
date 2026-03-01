@@ -7,9 +7,18 @@ table {
 table td {
     border: 1px solid lightgray;
     background-color: lightgray;
-    padding: 1em;
+    padding: 15px;
     width: 75px;
     height: 75px;
+}
+
+canvas {
+    position: absolute;
+    pointer-events: none;
+    top: 15px;
+    left: 110px;
+    width: 760px;
+    height: 740px;
 }
 
 button {
