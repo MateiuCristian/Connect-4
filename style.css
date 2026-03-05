@@ -1,7 +1,6 @@
 table {
-    border: 10px solid black;
     margin: auto;
-    margin-top: 100px;
+    border: 10px solid black;
 }
 
 table td {
@@ -10,15 +9,7 @@ table td {
     padding: 15px;
     width: 75px;
     height: 75px;
-}
-
-canvas {
-    position: absolute;
-    pointer-events: none;
-    top: 15px;
-    left: 110px;
-    width: 760px;
-    height: 740px;
+    text-align: center;
 }
 
 button {
