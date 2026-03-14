@@ -17,3 +17,8 @@ button {
     height: 75px;
     background-color: white !important;
 }
+
+div {
+   text-align: center; 
+   font-size: xx-large;
+}
