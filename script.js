@@ -52,7 +52,7 @@ function printOutcome(text) {
 }
 
 async function placePiece(cellId) {
-    if (getGameState() == "Ongoing" && isTurnDone == true) {
+    if (getGameState() == "Ongoing" && isTurnDone == true && lastFreeCell[Number(cellId[5])] >= 0) {
         isTurnDone = false;
         for (let i = 0; i <= lastFreeCell[Number(cellId[5])]; ++i) {
             document.getElementById("bt " + i.toString() + " " + cellId[5]).setAttribute('style', 'background-color: ' + colorTurn[0] + ' !important;');
