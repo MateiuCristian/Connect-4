@@ -1,6 +1,7 @@
 colorTurn = ["blue", "red"];
 lastFreeCell = [5, 5, 5, 5, 5, 5, 5];
 dir = [[1, 0], [0, 1], [-1, 0], [0, -1], [1, 1], [-1, -1], [1, -1], [-1, 1]];
+isTurnDone = true;
 
 function sleep(ms) {
     return new Promise(wait => setTimeout(wait, ms));
@@ -51,7 +52,8 @@ function printOutcome(text) {
 }
 
 async function placePiece(cellId) {
-    if (getGameState() == "Ongoing") {
+    if (getGameState() == "Ongoing" && isTurnDone == true) {
+        isTurnDone = false;
         for (let i = 0; i <= lastFreeCell[Number(cellId[5])]; ++i) {
             document.getElementById("bt " + i.toString() + " " + cellId[5]).setAttribute('style', 'background-color: ' + colorTurn[0] + ' !important;');
             await sleep(200);
@@ -66,5 +68,6 @@ async function placePiece(cellId) {
             changeTurn();
             printOutcome(colorTurn[0]);
         }
+        isTurnDone = true;
     }
 }
