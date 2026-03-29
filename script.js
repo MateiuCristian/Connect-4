@@ -3,6 +3,24 @@ lastFreeCell = [5, 5, 5, 5, 5, 5, 5];
 dir = [[1, 0], [0, 1], [-1, 0], [0, -1], [1, 1], [-1, -1], [1, -1], [-1, 1]];
 isTurnDone = true;
 
+window.onload = function() {
+    generateTable();
+}
+
+function generateTable() {
+    let table = document.getElementById("tableId");
+    for (let line = 0; line < 6; ++line) {
+        let tableRow = table.insertRow();
+        for (let col = 0; col < 7; ++col) {
+            let tableCell = tableRow.insertCell();
+            tableCell.id = "td " + line.toString() + " " + col.toString();
+            tableCell.innerHTML = "<button id=\"bt " + line.toString() + " " + col.toString() + "\" type=\"button\" class=\"btn rounded-circle\"</button>";
+            let cellButton = document.getElementById("bt " + line.toString() + " " + col.toString());
+            cellButton.addEventListener("click", () => {placePiece(tableCell.id);});
+        }
+    }
+}
+
 function sleep(ms) {
     return new Promise(wait => setTimeout(wait, ms));
 }
